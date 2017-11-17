@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="dcvs.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow|PT+Sans|Source+Sans+Pro" rel="stylesheet">
+    <link href="font-awesome.min.css" rel="stylesheet">
+    <title>DCVS</title>
+</head>
+
+<body>
+    <!--HEADER-->
+    <div class="bio-text">
+        <h1>1.2 Getting Started - Git Basics</h1>
+
+    </div>
+    <form>
+        &nbsp &nbsp &nbsp &nbsp
+        <input style="width: 200px; padding: 10px; cursor: pointer; box-shadow: 6px 6px 5px; #999; -webkit-box-shadow: 6px 6px 5px #999;
+            -moz-box-shadow: 6px 6px 5px #999; font-weight: bold; background: #333; color: white; border-radius: 10px; border: 1px solid #999; font-size: 150%;"
+            type="button" value="Cheat Sheet" onclick="window.location.href='file:///C:/Users/dan.CLARKWC/OneDrive/Northwestern/Google_Drive/Northwestern/classDocs/CLI-Cheat-Sheet.pdf'"
+        />
+    </form>
+
+    <div style="overflow: auto; width:800px; height:800px; font-family: 'Barlow', sans-serif; margin: 30px">
+        <p>
+            <h2>git BASICS</h2>
+        </p>
+        <p>
+            So, what is Git in a nutshell? This is an important section to absorb, because if you understand what Git is and the fundamentals
+            of how it works, then using Git effectively will probably be much easier for you. As you learn Git, try to clear
+            your mind of the things you may know about other VCSs, such as CVS, Subversion or Perforce — doing so will help
+            you avoid subtle confusion when using the tool. Even though Git’s user interface is fairly similar to these other
+            VCSs, Git stores and thinks about information in a very different way, and understanding these differences will
+            help you avoid becoming confused while using it.
+        </p>
+        <p>
+            <h3>Snapshots</h3>
+
+            <p>The major difference between Git and any other VCS (Subversion and friends included) is the way Git thinks about
+                its data. Conceptually, most other systems store information as a list of file-based changes. These other
+                systems (CVS, Subversion, Perforce, Bazaar, and so on) think of the information they store as a set of files
+                and the changes made to each file over time (this is commonly described as delta-based version control).
+            </p>
+            <p>
+                <img src="file:///C:/Users/dan.CLARKWC/OneDrive/Northwestern/Google_Drive/Images/deltas.png" width="400" height="200" alt="git Delta">
+            </p>
+            <p>
+                Git doesn’t think of or store its data this way. Instead, Git thinks of its data more like a series of snapshots of a miniature
+                filesystem. With Git, every time you commit, or save the state of your project, Git basically takes a picture
+                of what all your files look like at that moment and stores a reference to that snapshot. To be efficient,
+                if files have not changed, Git doesn’t store the file again, just a link to the previous identical file it
+                has already stored. Git thinks about its data more like a stream of snapshots.
+            </p>
+            <p>
+                <img src="file:///C:/Users/dan.CLARKWC/OneDrive/Northwestern/Google_Drive/Images/snapshots.png" width="400" height="200"
+                    alt="git Delta">
+            </p>
+            <p>
+                This is an important distinction between Git and nearly all other VCSs. It makes Git reconsider almost every aspect of version
+                control that most other systems copied from the previous generation. This makes Git more like a mini filesystem
+                with some incredibly powerful tools built on top of it, rather than simply a VCS. We’ll explore some of the
+                benefits you gain by thinking of your data this way when we cover Git branching in Git Branching.
+            </p>
+            <h3>NOTES:</h3>
+            <ul>
+                <p>
+                    <li>One of the most popular VCS tools in use today is called Git</li>
+                </p>
+                <li>Git is a Distributed VCS (a category known as DVCS)</li>
+            </ul>
+            <p>
+                <h3>git Concepts</h3>
+            </p>
+            <ul>
+                <li>RESPOSITORY</li>
+                <br>
+                <p>
+                    Think of a repository as a kind of database where your VCS stores all the versions and metadata that accumulate in the course
+                    of your project. In Git, the repository is just a simple hidden folder named “.git” in the root directory
+                    of your project. Knowing that this folder exists is more than enough. You don‘t have to (and, moreover,
+                    should not) touch anything inside this magical folder.
+                </p>
+                <p>
+                    <strong>ACCESSING THE REPOSITORY</strong>
+                </p>
+                <ol>
+                    <li>If you have a project locally on your computer that is not yet under version control, you can initialize
+                        a new repository for this project.
+                    </li>
+                    <br>
+                    <li>If you‘re getting on board of a project that‘s already running, chances are there is a repository on
+                        a remote server (on the internet or on your local network). You‘ll then probably be provided with
+                        a URL to this repository that you will then “clone” (download / copy) to your local computer.
+                    </li>
+                    <br>
+                </ol>
+                <p>As soon as you have a local repository, you can start working on your files: modify, delete, add, copy, rename,
+                    or move files in whatever
+
+                </p>
+                <li>BRANCHING & MERGING</li>
+                <br>
+                <p>Creating a "branch" in VCS tools keeps multiple streams of work independent from each other while also providing
+                    the facility to merge that work back together, enabling developers to verify that the changes on each
+                    branch do not conflict.
+                </p>
+                <li>TRACABILITY</li>
+                <br>
+                <p>
+                    Being able to trace each change made to the software and connect it to project management and bug tracking software such
+                    as Jira, and being able to annotate each change with a message describing the purpose and intent of the
+                    change can help not only with root cause analysis and other forensics.
+                </p>
+                </ol>
+            </ul>
+        </p>
+        <p>
+
+        </p>
+        <p>
+
+        </p>
+    </div>
+    <!--<div class="list">
+        <ul>
+            <li>Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.</li>
+        </ul>
+    </div>-->
+</body>
+
+</html>

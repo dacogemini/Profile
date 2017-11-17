@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="git.versionControl.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow|PT+Sans|Source+Sans+Pro" rel="stylesheet">
+    <link href="font-awesome.min.css" rel="stylesheet">
+    <title>git version-control</title>
+</head>
+
+<body>
+    <!--HEADER-->
+    <div class="bio-text">
+        <h1>1.1 Getting Started - About Version Control</h1>
+    </div>
+    <form>
+        &nbsp &nbsp &nbsp &nbsp<input style="width: 100px; padding: 10px; cursor: pointer; box-shadow: 6px 6px 5px; #999; -webkit-box-shadow: 6px 6px 5px #999;
+        -moz-box-shadow: 6px 6px 5px #999; font-weight: bold; background: #333; color: white; border-radius: 10px; border: 1px solid #999; font-size: 150%;"
+        type="button" value="git" onclick="window.location.href='file:///C:/Users/dan.CLARKWC/OneDrive/Northwestern/Google_Drive/Websites/Portfolio/main/dvcs.html'"
+        />
+    </form>
+    <div style="overflow: auto; width:800px; height:800px; font-family: 'Barlow', sans-serif; margin: 30px">
+        <p>This chapter will be about getting started with Git. We will begin by explaining some background on version control
+            tools, then move on to how to get Git running on your system and finally how to get it set up to start working
+            with. At the end of this chapter you should understand why Git is around, why you should use it and you should
+            be all set up to do so.
+        </p>
+        <h2>ABOUT VERSION CONTROL</h2>
+        <p>
+            <em>
+                <strong>What is “version control”, and why should you care?</strong>
+            </em>
+        </p>
+        <p>
+            <span>Version control systems</span> are a category of software tools that help a software team manage changes to source
+            code over time. Version control software keeps track of every modification to the code in a special kind of database.
+            If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix
+            the mistake while minimizing disruption to all team members.
+        </p>
+        <p>
+            If you are a graphic or web designer and want to keep every version of an image or layout (which you would most certainly
+            want to), a
+            <span>Version Control System (VCS)</span> is a very wise thing to use. It allows you to revert selected files back
+            to a previous state, revert the entire project back to a previous state, compare changes over time, see who last
+            modified something that might be causing a problem, who introduced an issue and when, and more. Using a VCS also
+            generally means that if you screw things up or lose files, you can easily recover. In addition, you get all this
+            for very little overhead.
+        </p>
+        <p>For almost all software projects, the source code is like the crown jewels - a precious asset whose value must be
+            protected. For most software teams, the source code is a repository of the invaluable knowledge and understanding
+            about the problem domain that the developers have collected and refined through careful effort. Version control
+            protects source code from both catastrophe and the casual degradation of human error and unintended consequences.
+        </p>
+        <p>
+            Software developers working in teams are continually writing new source code and changing existing source code. The code
+            for a project, app or software component is typically organized in a folder structure or "file tree". One developer
+            on the team may be working on a new feature while another developer fixes an unrelated bug by changing code,
+            each developer may make their changes in several parts of the file tree.
+        </p>
+        <h3>Local Version Control System</h3>
+        <p>
+            Many people’s version-control
+            <span>method of choice is to copy files into another directory</span> (perhaps a time-stamped directory, if they’re
+            clever). This approach is very common because it is so simple, but it is also
+            <span>incredibly error prone.</span>
+            It is easy to forget which directory you’re in and accidentally write to the wrong file or copy over files you don’t mean
+            to. To deal with this issue, programmers long ago developed local VCSs that had a simple database that kept all
+            the changes to files under revision control.</p>
+        <img src="https://git-scm.com/book/en/v2/images/local.png" width="500" height="400" alt="Revision Control">
+        <p>
+            <em>One of the more popular VCS tools was a system called RCS, which is still distributed with many computers today.
+                RCS works by keeping patch sets (that is, the differences between files) in a special format on disk; it
+                can then re-create what any file looked like at any point in time by adding up all the patches.</em>
+            <p>
+                <h3>Centralized Version Control Systems</h3>
+            </p>
+            <p>
+                The next major issue that people encounter is that they need to collaborate with developers on other systems. To deal with
+                this problem, Centralized Version Control Systems (CVCSs) were developed. These systems, such as CVS, Subversion,
+                and Perforce, have a single server that contains all the versioned files, and a number of clients that check
+                out files from that central place. For many years, this has been the standard for version control.</p>
+            <img src="file:///C:/Users/dan.CLARKWC/OneDrive/Northwestern/Google_Drive/Images/centralized.png" width="500" height="400"
+                alt="CVCS">
+        </p>
+        <p>
+            This setup offers many advantages, especially over local VCSs. For example, everyone knows to a certain degree what everyone
+            else on the project is doing. Administrators have fine-grained control over who can do what, and it’s far easier
+            to administer a CVCS than it is to deal with local databases on every client.
+        </p>
+        <p>
+            However, this setup also has some serious downsides. The most obvious is the single point of failure that the centralized
+            server represents. If that server goes down for an hour, then during that hour nobody can collaborate at all
+            or save versioned changes to anything they’re working on. If the hard disk the central database is on becomes
+            corrupted, and proper backups haven’t been kept, you lose absolutely everything — the entire history of the project
+            except whatever single snapshots people happen to have on their local machines. Local VCS systems suffer from
+            this same problem — whenever you have the entire history of the project in a single place, you risk losing everything.
+        </p>
+        <p>
+            <h3>Distributed Version Control Systems</h3>
+        </p>
+        <p>
+            This is where Distributed Version Control Systems (DVCSs) step in. In a DVCS (such as Git, Mercurial, Bazaar or Darcs), clients
+            don’t just check out the latest snapshot of the files; rather, they fully mirror the repository, including its
+            full history. Thus, if any server dies, and these systems were collaborating via that server, any of the client
+            repositories can be copied back up to the server to restore it. Every clone is really a full backup of all the
+            data.
+        </p>
+        <p>
+            <img src="file:///C:/Users/dan.CLARKWC/OneDrive/Northwestern/Google_Drive/Images/distributed.png" width="500" height="400">
+        </p>
+        <p>
+            <h3>NOTES:</h3>
+            <ul>
+                <p>
+                    <li>One of the most popular VCS tools in use today is called Git</li>
+                </p>
+                <li>Git is a Distributed VCS (a category known as DVCS)</li>
+            </ul>
+            <p>
+                <h3>git Concepts</h3>
+            </p>
+            <ol>
+                <li>BRANCHING & MERGING</li>
+                <br>
+                <p>Creating a "branch" in VCS tools keeps multiple streams of work independent from each other while also providing
+                    the facility to merge that work back together, enabling developers to verify that the changes on each
+                    branch do not conflict.
+                </p>
+                <li>TRACABILITY</li>
+                <br>
+                <p>
+                    Being able to trace each change made to the software and connect it to project management and bug tracking software such
+                    as Jira, and being able to annotate each change with a message describing the purpose and intent of the
+                    change can help not only with root cause analysis and other forensics.
+                </p>
+            </ol>
+            </ul>
+        </p>
+        <p>
+
+        </p>
+        <p>
+
+        </p>
+    </div>
+    <!--<div class="list">
+        <ul>
+            <li>Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.</li>
+        </ul>
+    </div>-->
+</body>
+
+</html>
